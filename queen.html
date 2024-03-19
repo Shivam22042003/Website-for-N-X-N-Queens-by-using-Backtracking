@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chessboard Configuration</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </head>
+  <body>
+    <div class="hero">
+      <nav>
+        <img src="images/logo.jpeg" class="logo" />
+        <ul>
+          <li><a href="index.html"> Home</a></li>
+          <li><a href="queen.html"> N X N Queens</a></li>
+          <li><a href="solution.html"> Solution</a></li>
+        </ul>
+        <div>
+          <a href="queen.html" class="download">Play Now</a>
+        </div>
+      </nav>
+    <section id="problem-description">
+      <div class="container">
+        <h2>Problem Description</h2>
+        <p>
+          Given an N x N grid representing a chessboard, your task is to find a
+          solution that satisfies certain conditions. Each cell of the
+          chessboard can be either empty or contain a piece.
+        </p>
+        <h3>Constraints:</h3>
+        <ul>
+          <li>The grid is of size N x N, where N is a positive integer.</li>
+          <li>
+            Each cell of the grid can either be empty (denoted by '.') or
+            contain a piece (denoted by 'P').
+          </li>
+        </ul>
+        <h3>Conditions:</h3>
+        <ul>
+          <li>
+            <strong>No Two Pieces in the Same Row or Column:</strong> There can
+            be at most one piece in each row and each column of the chessboard.
+          </li>
+          <li>
+            <strong>Diagonal Constraints:</strong> No two pieces can attack each
+            other diagonally. This means that there should be no two pieces such
+            that they are on the same diagonal line (either main diagonal or
+            secondary diagonal).
+          </li>
+        </ul>
+        <h3>Objective:</h3>
+        <p>
+          Your goal is to find a configuration of pieces on the chessboard that
+          satisfies the above conditions. If a solution exists, return the grid
+          configuration; otherwise, return an empty grid.
+        </p>
+        <div class="button-container">
+         <button id="solve-button">Solve</button> 
+         <button id="pause-button" onclick="pauseTimer()">Pause</button>
+        <button id="restart-button" onclick="restartTimer()">Restart</button>
+        </div>
+        <p id="timer">Time Elapsed: 00:00:00</p>
+      </div>
+      
+    </div>
+    </section>
+    <div class="flex-container">
+      <div class="queens-container">
+        <!-- Queen pieces -->
+        <h1>Drag and Drop</h1>
+        <img
+          id="queen1"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+        <img
+          id="queen2"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+        <img
+          id="queen3"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+        <img
+          id="queen4"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+        <img
+          id="queen5"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+        <img
+          id="queen6"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+        <img
+          id="queen7"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+        <img
+          id="queen8"
+          src="./images/queen1.png"
+          alt="Queen"
+          class="queen"
+          draggable="true"
+          ondragstart="dragStart(event)"
+        />
+      </div>
+
+      <div class="chessboard-container">
+        <div class="board">
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <!-- Row 2 -->
+
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <!-- Row 3 -->
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <!-- Row 4 -->
+
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <!-- Row 5 -->
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <!-- Row 6 -->
+
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <!-- Row 7 -->
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <!-- Row 8 -->
+
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square odd"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+          <div
+            class="square even"
+            ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+          ></div>
+        </div>
+      </div>
+      <div class="solution-controls">
+        <button id="show-solution">Show Solution</button>
+        <button id="hide-solution" style="display: none;">Hide Solution</button>
+      </div>
+      <div class="solution-container" id="solution-container" style="display: none;">
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="col">
+          <img src="./images/logo.jpeg" class="footer_logo" />
+          <p class="footer_about">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
+            harum molestias nesciunt, doloremque magni aspernatur iste
+            blanditiis, fugiat quaerat accusamus ut, vero tempore. Fugiat,
+            illum!
+          </p>
+        </div>
+        <div class="col">
+          <h3>
+            Office
+            <div class="bottom_line"><span></span></div>
+          </h3>
+          <p>Thakur College of Engineering and Technology</p>
+          <p>India</p>
+          <p>Mumbai, Kandivali,400101</p>
+          <p class="footer_email">group1@gamil.com</p>
+          <h4>+91-1459581952</h4>
+        </div>
+        <div class="col">
+          <h3>
+            Links
+            <div class="bottom_line"><span></span></div>
+          </h3>
+          <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT</a></li>
+            <li><a href="">SERVICE</a></li>
+            <li><a href="">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>
+            Newsletter
+            <div class="bottom_line"><span></span></div>
+          </h3>
+          <form>
+            <ion-icon class="icon" name="mail"></ion-icon>
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">
+              <ion-icon
+                class="icon_right"
+                name="arrow-round-forward"
+              ></ion-icon>
+            </button>
+          </form>
+          <div class="social_icons">
+            <ion-icon class="social_icon" name="logo-facebook"></ion-icon>
+            <ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+            <ion-icon class="social_icon" name="logo-twitter"></ion-icon>
+            <ion-icon class="social_icon" name="logo-instagram"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">Backtracking Ⓒ 2022 - All Rights Reserved</p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
